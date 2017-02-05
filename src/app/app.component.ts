@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Temperature } from './temperature-card/temperature-card.component';
+import { Profile } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,11 @@ import { Temperature } from './temperature-card/temperature-card.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Hot Weather Widget';
-  temperature: Temperature;
-  resort = {
+  public title: string = 'Hot Weather Widget';
+  
+  public temperature: Temperature;
+  
+  public resort = {
     menu: [
       { title: 'Отели', handler: this.loadResortData.bind(this, 'hotel') },
       { title: 'Рыбалка', handler: this.loadResortData.bind(this, 'fishing') },
@@ -19,6 +22,12 @@ export class AppComponent {
     items: [],
     loading: false
   }
+
+  public profile: Profile = {
+    followers: 20,
+    following: 1,
+    title: 'Какое-то название'
+  };
 
   constructor() {
     setTimeout(() => {
@@ -87,5 +96,9 @@ export class AppComponent {
       this.resort.items = data[type];
       this.resort.loading = false;
     }, 2000);
+  }
+
+  public onSubscribe(eventArgs) {
+    console.log(eventArgs);
   }
 }
