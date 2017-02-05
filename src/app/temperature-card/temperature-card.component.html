@@ -1,7 +1,13 @@
-<div class="temperatur">
-    <h5>Et harum quidem</h5>
+<div class="temperatur" *ngIf="temperature">
+    <h5>{{ temperature.place }}</h5>
     <span class="w-line"> </span>
-    <span class="cloud"> </span>
-    <h2>14<sup class="degree">°</sup></h2>
-    <h6>Water 20<sup class="degree">°</sup></h6>
+    <div class="temperatur__degrees">
+        <span class="cloud"> </span>
+        <h2>{{ temperature.degrees }}<sup class="degree">°</sup></h2>
+    </div>
+    <h6>Water {{ temperature.water }}<sup class="degree">°</sup></h6>
+</div>
+
+<div class="temperatur" *ngIf="!temperature">
+    <img class="loader" src="/assets/images/loader.png" alt="">
 </div>

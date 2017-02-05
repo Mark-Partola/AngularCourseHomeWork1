@@ -1,8 +1,9 @@
 <h1>{{ title }}</h1>
 <div class="element">
-    <resort-card></resort-card>
+    <resort-card [resort]="resort"></resort-card>
     <div class="element-right">
-        <temperature-card></temperature-card>
+        <temperature-card [temperature]="temperature">
+        </temperature-card>
         <profile-card></profile-card>
     </div>
     <div class="clear"></div>
