@@ -1,10 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
-export type Profile = {
-  followers: number,
-  following: number,
-  title: string
-};
+import { IProfile } from '../models/IProfile';
 
 @Component({
   selector: 'profile-card',
@@ -18,7 +13,7 @@ export class ProfileComponent {
   public title: string;
 
   @Input()
-  public set profile (profile: Profile) {
+  public set profile (profile: IProfile) {
     this.followers = profile.followers || 0,
     this.following = profile.following || 0
     this.title = profile.title

@@ -1,10 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ITemperature } from '../models/ITemperature';
 
-export type Temperature = {
-  degrees: number,
-  water: number,
-  place: string
-};
 
 @Component({
   selector: 'temperature-card',
@@ -14,6 +10,6 @@ export type Temperature = {
 export class TemperatureCardComponent {
 
   @Input()
-  public temperature: Temperature;
+  public temperature: ITemperature;
 
 }
