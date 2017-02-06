@@ -51,6 +51,8 @@ export class AppComponent {
   }
 
   public onSubscribe(eventArgs) {
+    console.log(this.profile.followers);
     this.profile.followers++;
+    console.log(this.profile.followers);
   }
 }
