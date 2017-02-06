@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ResortCardComponent {
 
-  public bigImage = '/assets/images/4.jpeg'; 
+  public bigImage = '/AngularCourseHomeWork1/assets/images/4.jpeg'; 
 
   @Input('resort')
   public data;
